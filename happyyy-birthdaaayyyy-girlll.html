@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selamat Ulang Tahun 🎂</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    overflow:hidden;
+}
+
+.container{
+    text-align:center;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    max-width:650px;
+    width:90%;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.cat-photo{
+    width:250px;
+    max-width:80%;
+    border-radius:20px;
+    margin-bottom:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+h1{
+    color:#ff4d6d;
+    margin-bottom:20px;
+}
+
+p{
+    line-height:1.8;
+    color:#444;
+    font-size:18px;
+}
+
+button{
+    padding:15px 30px;
+    border:none;
+    border-radius:30px;
+    background:#ff4d6d;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+#birthdayMessage{
+    display:none;
+    animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.heart{
+    position:absolute;
+    color:red;
+    animation:float 5s linear infinite;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-100px);
+        opacity:0;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div id="welcomePage">
+
+        <h1>Beep Beep</h1>
+
+        <p>
+            heyhou!!! there's a letter waiting for you to open!!!
+        </p>
+
+        <br>
+
+        <button onclick="showBirthdayMessage()">
+            click to open it!!!
+        </button>
+
+    </div>
+
+    <div id="birthdayMessage">
+
+        <h1>❤️ HAPPY 18TH BIRTHDAY MALIKA AZALIA BUANAWAN!!!! ❤️</h1>
+
+        <p>
+            selamat ulang tahun ke-18 yaahhhh manusia cannccciii, immuuuttt, geemmmuuuyyyy, luucccuuuu, emmeeesshhhh ❤️❤️
+            <br><br>
+            may this year be the best year for youu!!! may all your wishes fulfilled!!! may all your dreams come truee!!! 
+            may all good things happen to youu!!! may you always be happyy!!! 
+            i will always wish you all the besttt ❤️
+            <br><br>
+
+            maafyah kalo menurutmu masih kureng 😅😅, but this is all i can do for you girl ❤️❤️
+        </p>
+
+    </div>
+
+</div>
+
+<script>
+function showBirthdayMessage(){
+    document.getElementById("welcomePage").style.display = "none";
+    document.getElementById("birthdayMessage").style.display = "block";
+}
+
+function createHeart(){
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
